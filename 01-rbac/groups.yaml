@@ -1,0 +1,40 @@
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: gpt-demo-users
+users:
+- b64:c3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vZGVscy1hcy1hLXNlcnZpY2U6cGxheWdyb3VuZC1kZW1vLXNh
+- admin
+---
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: gpt-prod-users
+users:
+- b64:c3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vZGVscy1hcy1hLXNlcnZpY2U6cGxheWdyb3VuZC1wcm9kLXNh
+- admin
+---
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: goose-users
+users:
+- b64:c3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vZGVscy1hcy1hLXNlcnZpY2U6Z29vc2Utc2E=
+- admin
+---
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: ols-users
+users:
+- b64:c3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vZGVscy1hcy1hLXNlcnZpY2U6b2xzLXNh
+- admin
+---
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: qwen-users
+users:
+- b64:c3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vZGVscy1hcy1hLXNlcnZpY2U6cXdlbi1zYQ==
+- admin
+

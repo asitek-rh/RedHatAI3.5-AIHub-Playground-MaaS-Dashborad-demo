@@ -1,0 +1,54 @@
+apiVersion: ols.openshift.io/v1alpha1
+kind: OLSConfig
+metadata:
+  name: cluster
+spec:
+  audit: {}
+  llm:
+    providers:
+    - credentialsSecretRef:
+        name: gpt-oss-maas-key
+      models:
+      - name: redhataigpt-oss-20b
+        parameters:
+          toolBudgetRatio: 0.5
+      name: gpt-oss-maas
+      type: rhoai_vllm
+      # NOTE: update this URL if deploying on a different cluster
+      url: https://maas.apps.ocp.pvtxr.sandbox3461.opentlc.com/models-as-a-service/redhataigpt-oss-20b/v1
+  ols:
+    conversationCache:
+      postgres:
+        maxConnections: 2000
+        sharedBuffers: 256MB
+      type: postgres
+    credentialHotReload: false
+    defaultModel: redhataigpt-oss-20b
+    defaultProvider: gpt-oss-maas
+    deployment:
+      agenticConsole:
+        replicas: 1
+      alertsAdapter:
+        replicas: 1
+      api:
+        replicas: 1
+      console:
+        replicas: 1
+      dataCollector: {}
+      database:
+        replicas: 1
+      mcpServer:
+        replicas: 1
+      otelCollector:
+        replicas: 1
+      rhokp:
+        replicas: 1
+    guardrails:
+      toolResultInspection:
+        enabled: false
+    introspectionEnabled: true
+    logLevel: INFO
+    maxIterations: 20
+    userDataCollection: {}
+  olsDataCollector:
+    logLevel: INFO

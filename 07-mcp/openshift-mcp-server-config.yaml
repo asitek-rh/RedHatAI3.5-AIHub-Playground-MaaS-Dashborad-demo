@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: openshift-mcp-server-config
+  namespace: models-as-a-service
+data:
+  config.toml: 'log_level = 5
+
+    port = "8080"
+
+    read_only = true
+
+    toolsets = ["core", "config"]
+
+    '
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: mcp-viewer
+  namespace: models-as-a-service
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: mcp-viewer-models-as-a-service
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+subjects:
+- kind: ServiceAccount
+  name: mcp-viewer
+  namespace: models-as-a-service

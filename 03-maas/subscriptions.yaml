@@ -1,0 +1,85 @@
+apiVersion: maas.opendatahub.io/v1alpha1
+kind: MaaSSubscription
+metadata:
+  name: goose-subscription
+  namespace: models-as-a-service
+spec:
+  modelRefs:
+  - name: redhataigpt-oss-20b
+    namespace: models-as-a-service
+    tokenRateLimits:
+    - limit: 500000
+      window: 1h
+  owner:
+    groups:
+    - name: goose-users
+  priority: 6
+---
+apiVersion: maas.opendatahub.io/v1alpha1
+kind: MaaSSubscription
+metadata:
+  name: gpt-oss-demo-subscription
+  namespace: models-as-a-service
+spec:
+  modelRefs:
+  - name: redhataigpt-oss-20b
+    namespace: models-as-a-service
+    tokenRateLimits:
+    - limit: 500
+      window: 1h
+  owner:
+    groups:
+    - name: gpt-demo-users
+  priority: 5
+---
+apiVersion: maas.opendatahub.io/v1alpha1
+kind: MaaSSubscription
+metadata:
+  name: gpt-oss-prod-subscription
+  namespace: models-as-a-service
+spec:
+  modelRefs:
+  - name: redhataigpt-oss-20b
+    namespace: models-as-a-service
+    tokenRateLimits:
+    - limit: 1500000
+      window: 1h
+  owner:
+    groups:
+    - name: gpt-prod-users
+  priority: 4
+---
+apiVersion: maas.opendatahub.io/v1alpha1
+kind: MaaSSubscription
+metadata:
+  name: ols-subscription
+  namespace: models-as-a-service
+spec:
+  modelRefs:
+  - name: redhataigpt-oss-20b
+    namespace: models-as-a-service
+    tokenRateLimits:
+    - limit: 500000
+      window: 1h
+  owner:
+    groups:
+    - name: ols-users
+  priority: 3
+---
+apiVersion: maas.opendatahub.io/v1alpha1
+kind: MaaSSubscription
+metadata:
+  name: qwen-subscription
+  namespace: models-as-a-service
+spec:
+  modelRefs:
+  - name: redhataiqwen3-8b-fp8-dynamic
+    namespace: models-as-a-service
+    tokenRateLimits:
+    - limit: 100000
+      window: 1h
+  owner:
+    groups:
+    - name: qwen-users
+  priority: 5
+

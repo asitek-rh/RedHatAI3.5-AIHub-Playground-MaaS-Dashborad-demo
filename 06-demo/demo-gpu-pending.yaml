@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-gpu-pending
+  namespace: models-as-a-service
+spec:
+  containers:
+  - name: demo
+    image: registry.access.redhat.com/ubi9/ubi-minimal
+    command: ["sleep", "infinity"]
+    resources:
+      requests:
+        nvidia.com/gpu: "1"
+      limits:
+        nvidia.com/gpu: "1"

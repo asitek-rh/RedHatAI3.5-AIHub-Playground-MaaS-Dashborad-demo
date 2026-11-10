@@ -1,0 +1,65 @@
+apiVersion: maas.opendatahub.io/v1alpha1
+kind: MaaSAuthPolicy
+metadata:
+  name: goose-auth-policy
+  namespace: models-as-a-service
+spec:
+  modelRefs:
+  - name: redhataigpt-oss-20b
+    namespace: models-as-a-service
+  subjects:
+    groups:
+    - name: goose-users
+---
+apiVersion: maas.opendatahub.io/v1alpha1
+kind: MaaSAuthPolicy
+metadata:
+  name: gpt-oss-demo-auth-policy
+  namespace: models-as-a-service
+spec:
+  modelRefs:
+  - name: redhataigpt-oss-20b
+    namespace: models-as-a-service
+  subjects:
+    groups:
+    - name: gpt-demo-users
+---
+apiVersion: maas.opendatahub.io/v1alpha1
+kind: MaaSAuthPolicy
+metadata:
+  name: gpt-oss-prod-auth-policy
+  namespace: models-as-a-service
+spec:
+  modelRefs:
+  - name: redhataigpt-oss-20b
+    namespace: models-as-a-service
+  subjects:
+    groups:
+    - name: gpt-prod-users
+---
+apiVersion: maas.opendatahub.io/v1alpha1
+kind: MaaSAuthPolicy
+metadata:
+  name: ols-auth-policy
+  namespace: models-as-a-service
+spec:
+  modelRefs:
+  - name: redhataigpt-oss-20b
+    namespace: models-as-a-service
+  subjects:
+    groups:
+    - name: ols-users
+---
+apiVersion: maas.opendatahub.io/v1alpha1
+kind: MaaSAuthPolicy
+metadata:
+  name: qwen-auth-policy
+  namespace: models-as-a-service
+spec:
+  modelRefs:
+  - name: redhataiqwen3-8b-fp8-dynamic
+    namespace: models-as-a-service
+  subjects:
+    groups:
+    - name: qwen-users
+
