@@ -1,7 +1,11 @@
 # RHOAI 3.5 Demo Cluster Configuration Backup
 
+This repository contains the configuration backup and restore procedures for a Red Hat OpenShift AI 3.5 demo cluster. The cluster demonstrates enterprise-grade generative AI capabilities including model serving with governance via Models as a Service (MaaS), multi-model comparison in GenAI Studio playground, retrieval-augmented generation (RAG), AI-assisted cluster administration through OpenShift Lightspeed, external AI agent integration via Goose, and cluster introspection through the OpenShift MCP server. The setup uses two NVIDIA L4 GPUs to serve gpt-oss-20b and qwen3-8b-fp8 models simultaneously, with per-consumer subscription-based token quota enforcement.
+
+---
+
 Cluster: `api.ocp.pvtxr.sandbox3461.opentlc.com`  
-OCP: 4.22.12 | RHOAI: 3.5.2 | GPU: 2× NVIDIA L4 (g6.2xlarge)
+OCP: 4.22.12 | RHOAI: 3.5.2 | GPU: 2× NVIDIA L4 (g6.2xlarge, AWS us-east-2)
 
 ## What's in this repo
 
@@ -15,7 +19,7 @@ OCP: 4.22.12 | RHOAI: 3.5.2 | GPU: 2× NVIDIA L4 (g6.2xlarge)
 | `06-demo/` | demo-gpu-pending pod (OLS demo) |
 | `secrets/` | Templates only — never committed with real values |
 | `goose/` | Goose agent config (API key redacted) |
-| `docs/` | Runbooks for GUI steps |
+| `docs/` | Runbooks for GUI steps and demo guide |
 
 ## Quick Restore
 
