@@ -21,6 +21,10 @@ OCP: 4.22.12 | RHOAI: 3.5.2 | GPU: 2× NVIDIA L4 (g6.2xlarge, AWS us-east-2)
 | `goose/` | Goose agent config (API key redacted) |
 | `docs/` | Runbooks for GUI steps and demo guide |
 
+## Prerequisites
+
+- **Red Hat OpenShift Container Platform Cluster (Multi-Cloud)** deployed on AWS
+
 ## Quick Restore
 
 ```bash
